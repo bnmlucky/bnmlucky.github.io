@@ -1,0 +1,29 @@
+body {
+  background-color: #4a5c63;
+  font-family: "Open Sans", sans-serif;
+}
+header {
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  background-color: #894d28;
+}
+h1 {
+  color: #d0d2cc;
+  text-align: center;
+}
+
+h2 {
+  color: #d0d2cc;
+  text-align: center;
+}
+
+.container {
+  margin-top: 80px;
+  margin-left: 100px;
+}
+
+img {
+  width: 300px;
+  height: 300px;
+}
