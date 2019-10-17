@@ -20,10 +20,47 @@ h2 {
 
 .container {
   margin-top: 100px;
-  margin-left: 100px;
+  text-align: center;
 }
 
-img {
+/* img {
   width: 300px;
+  height: 300px;
+} */
+
+.input-field {
+  text-align: center;
+}
+
+.future-query {
+  display: inline-block;
+  padding: 10px 15px;
+  font-size: 20px;
+  border-radius: 0;
+  -webkit-appearance: none;
+}
+.submit {
+  display: inline-block;
+  font-size: 20px;
+  background-color: #bb8551;
+  color: white;
+  line-height: 42px;
+}
+
+.giphychoice {
+  margin: 60px 10px 60px 10px;
+  padding: 10px;
+  text-align: center;
+  font-size: 2.5em;
+  color: #d0d2cc;
+  border: 1px solid #93a299;
+}
+.square {
+  overflow: hidden;
+  border: 2px solid teal;
+  margin: 4px 2px 2px 3px;
+  display: inline-block;
+  border-radius: 10px;
+  width: 30%;
   height: 300px;
 }

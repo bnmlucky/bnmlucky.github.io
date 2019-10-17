@@ -1,28 +1,54 @@
 $(() => {
-  $("#choices").on("click", event => {
-    const newGif = $(event.currentTarget).val();
+  $("form").on("submit", event => {
+    event.preventDefault();
+    const newGif = $(".future-query").val();
     console.log(newGif);
-    const endpoint = `https://api.giphy.com/v1/gifs/search?api_key=OBitdmb0SaKAnBE6xlHlIFrUHJW6YfFU&q=${newGif}&limit=10&offset=25&rating=G&lang=en`;
+    const endpoint = `https://api.giphy.com/v1/gifs/search?api_key=OBitdmb0SaKAnBE6xlHlIFrUHJW6YfFU&q=${newGif}&limit=9&offset=0&rating=PG&lang=en`;
     console.log(endpoint);
 
+    const askUser = $("<p>")
+      .text(
+        "Where are you at in life right now?  Pick a giphy that feels right."
+      )
+      .addClass("giphychoice");
+    $(".container").append(askUser);
+
     const handleData = data => {
-      const image0 = $("<img>").attr("src", data.data[0].images.downsized.url);
+      const image0 = $("<img>")
+        .attr("src", data.data[0].images.downsized.url)
+        .addClass("square");
       $(".container").append(image0);
-      const image1 = $("<img>").attr("src", data.data[1].images.downsized.url);
+      const image1 = $("<img>")
+        .attr("src", data.data[1].images.downsized.url)
+        .addClass("square");
       $(".container").append(image1);
-      const image2 = $("<img>").attr("src", data.data[2].images.downsized.url);
+      const image2 = $("<img>")
+        .attr("src", data.data[2].images.downsized.url)
+        .addClass("square");
       $(".container").append(image2);
-      const image3 = $("<img>").attr("src", data.data[3].images.downsized.url);
+      const image3 = $("<img>")
+        .attr("src", data.data[3].images.downsized.url)
+        .addClass("square");
       $(".container").append(image3);
-      const image4 = $("<img>").attr("src", data.data[4].images.downsized.url);
+      const image4 = $("<img>")
+        .attr("src", data.data[4].images.downsized.url)
+        .addClass("square");
       $(".container").append(image4);
-      const image5 = $("<img>").attr("src", data.data[5].images.downsized.url);
+      const image5 = $("<img>")
+        .attr("src", data.data[5].images.downsized.url)
+        .addClass("square");
       $(".container").append(image5);
-      const image6 = $("<img>").attr("src", data.data[6].images.downsized.url);
+      const image6 = $("<img>")
+        .attr("src", data.data[6].images.downsized.url)
+        .addClass("square");
       $(".container").append(image6);
-      const image7 = $("<img>").attr("src", data.data[7].images.downsized.url);
+      const image7 = $("<img>")
+        .attr("src", data.data[7].images.downsized.url)
+        .addClass("square");
       $(".container").append(image7);
-      const image8 = $("<img>").attr("src", data.data[8].images.downsized.url);
+      const image8 = $("<img>")
+        .attr("src", data.data[8].images.downsized.url)
+        .addClass("square");
       $(".container").append(image8);
     };
     $.ajax({
