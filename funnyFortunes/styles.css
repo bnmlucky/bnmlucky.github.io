@@ -70,3 +70,24 @@ img:hover {
   width: 30%;
   height: 300px;
 }
+
+.prediction {
+  margin-top: 10%;
+  padding-top: 2%;
+  padding-bottom: 5%;
+  text-align: center;
+  background-color: #a64135;
+  margin-left: 10%;
+  margin-right: 10%;
+  border: 2px solid #dbba9a;
+  display: none;
+}
+
+.prediction-text {
+  height: 50%;
+  width: 50%;
+  padding-top: 30px;
+  margin: auto;
+  line-height: 48px;
+  font-size: 36px;
+}

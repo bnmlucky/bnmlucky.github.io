@@ -21,9 +21,6 @@ $(() => {
           .addClass(assignRandomClass());
         $(".container").append(image);
         givePrediction(image);
-        // image.on("click", () => {
-        //   console.log(`clicked ${i}`);
-        //   // if/else statement to check if it has super
       }
     };
     $.ajax({
@@ -36,14 +33,18 @@ $(() => {
       if ($(clickedImg).hasClass("good")) {
         $(".container")
           .hide("slow")
-          .delay(4000);
+          .delay(1000);
         const $predictionDiv = $(".prediction");
+        const $predictionTitle = $("<h1>").text(
+          "Here's what you need to know:"
+        );
+        $predictionTitle.appendTo($predictionDiv);
         const $thisPrediction = $("<p>");
         $thisPrediction
           .text("Someone is looking up to you.  Don't let that person down.")
           .addClass("prediction-text");
         $thisPrediction.appendTo($predictionDiv);
-        // $predictionDiv.show();
+        $predictionDiv.show().delay(7000);
         console.log(
           "Someone is looking up to you.  Don't let that person down."
         );
