@@ -31,21 +31,7 @@ $(() => {
   const givePrediction = clickedImg => {
     clickedImg.on("click", event => {
       if ($(clickedImg).hasClass("good")) {
-        $(".container")
-          .hide("slow")
-          .delay(1000);
-        const $predictionDiv = $(".prediction");
-        const $predictionTitle = $("<h1>").text(
-          "Here's what you need to know:"
-        );
-        $predictionTitle.appendTo($predictionDiv);
-        const $thisPrediction = $("<p>");
-        $thisPrediction
-          .text("Someone is looking up to you.  Don't let that person down.")
-          .addClass("prediction-text");
-        $thisPrediction.appendTo($predictionDiv);
-        $predictionDiv.show().delay(7000);
-        //
+        showPrediction();
       } else if ($(clickedImg).hasClass("awesome")) {
         $(".container")
           .hide("slow")
@@ -57,9 +43,7 @@ $(() => {
         $predictionTitle.appendTo($predictionDiv);
         const $thisPrediction = $("<p>");
         $thisPrediction
-          .text(
-            "Run in the direction of your dreams.  They are closer than you think!"
-          )
+          .text(assignRandomPrediction())
           .addClass("prediction-text");
         $thisPrediction.appendTo($predictionDiv);
         $predictionDiv.show().delay(7000);
@@ -75,9 +59,7 @@ $(() => {
         $predictionTitle.appendTo($predictionDiv);
         const $thisPrediction = $("<p>");
         $thisPrediction
-          .text(
-            "Set your worries aside for a while and go to a party. The right path will emerge when you are more relaxed."
-          )
+          .text(assignRandomPrediction())
           .addClass("prediction-text");
         $thisPrediction.appendTo($predictionDiv);
         $predictionDiv.show().delay(7000);
@@ -93,9 +75,7 @@ $(() => {
         $predictionTitle.appendTo($predictionDiv);
         const $thisPrediction = $("<p>");
         $thisPrediction
-          .text(
-            "You can't get what you want by sitting all by yourself in a corner.  Get out into the world, go for it, and you will get it!"
-          )
+          .text(assignRandomPrediction())
           .addClass("prediction-text");
         $thisPrediction.appendTo($predictionDiv);
         $predictionDiv.show().delay(7000);
@@ -111,9 +91,7 @@ $(() => {
         $predictionTitle.appendTo($predictionDiv);
         const $thisPrediction = $("<p>");
         $thisPrediction
-          .text(
-            "What you want to achieve lies outside of your comfort zone. Gear up and go get it! Take the plunge."
-          )
+          .text(assignRandomPrediction())
           .addClass("prediction-text");
         $thisPrediction.appendTo($predictionDiv);
         $predictionDiv.show().delay(7000);
@@ -129,9 +107,7 @@ $(() => {
         $predictionTitle.appendTo($predictionDiv);
         const $thisPrediction = $("<p>");
         $thisPrediction
-          .text(
-            "Life has a great surprise in store for you, get ready.  Don't do anything stupid while you wait."
-          )
+          .text(assignRandomPrediction())
           .addClass("prediction-text");
         $thisPrediction.appendTo($predictionDiv);
         $predictionDiv.show().delay(7000);
@@ -147,9 +123,7 @@ $(() => {
         $predictionTitle.appendTo($predictionDiv);
         const $thisPrediction = $("<p>");
         $thisPrediction
-          .text(
-            "You'll survive whatever you are going through, write a survival guide and get on New York Times Bestseller list with it"
-          )
+          .text(assignRandomPrediction())
           .addClass("prediction-text");
         $thisPrediction.appendTo($predictionDiv);
         $predictionDiv.show().delay(7000);
@@ -165,9 +139,7 @@ $(() => {
         $predictionTitle.appendTo($predictionDiv);
         const $thisPrediction = $("<p>");
         $thisPrediction
-          .text(
-            "There is logic in seemingly random events that happen in your life.  Trust the process and it'll take you where you want to be."
-          )
+          .text(assignRandomPrediction())
           .addClass("prediction-text");
         $thisPrediction.appendTo($predictionDiv);
         $predictionDiv.show().delay(7000);
@@ -183,9 +155,7 @@ $(() => {
         $predictionTitle.appendTo($predictionDiv);
         const $thisPrediction = $("<p>");
         $thisPrediction
-          .text(
-            "There is no easy path to where you want to be, but you'll make a lot of friends along the way."
-          )
+          .text(assignRandomPrediction())
           .addClass("prediction-text");
         $thisPrediction.appendTo($predictionDiv);
         $predictionDiv.show().delay(7000);
@@ -201,6 +171,19 @@ $(() => {
     });
   };
   $reloadPage();
+
+  const showPrediction = () => {
+    $(".container")
+      .hide("slow")
+      .delay(1000);
+    const $predictionDiv = $(".prediction");
+    const $predictionTitle = $("<h1>").text("Here's what you need to know:");
+    $predictionTitle.appendTo($predictionDiv);
+    const $thisPrediction = $("<p>");
+    $thisPrediction.text(assignRandomPrediction()).addClass("prediction-text");
+    $thisPrediction.appendTo($predictionDiv);
+    $predictionDiv.show().delay(7000);
+  };
 });
 //$(".container").html("");
 
@@ -221,3 +204,24 @@ const assignRandomClass = () => {
   return randomClassValue;
 };
 assignRandomClass();
+
+const randomPredictionArray = [
+  "Someone is looking up to you.  Don't let that person down.",
+  "Run in the direction of your dreams.  They are closer than you think!",
+  "Set your worries aside for a while and go to a party. The right path will emerge when you are more relaxed.",
+  "You can't get what you want by sitting all by yourself in a corner.  Get out into the world, go for it, and you will get it!",
+  "What you want to achieve lies outside of your comfort zone. Gear up and go get it! Take the plunge.",
+  "Life has a great surprise in store for you, get ready.  Don't do anything stupid while you wait.",
+  "You'll survive whatever you are going through, write a survival guide and get on New York Times Bestseller list with it",
+  "There is logic in seemingly random events that happen in your life.  Trust the process and it'll take you where you want to be.",
+  "There is no easy path to where you want to be, but you'll make a lot of friends along the way.",
+  "Buy this lottery ticket and see what happens."
+];
+
+const assignRandomPrediction = () => {
+  const randomPredictionIndex = Math.floor(
+    Math.random() * randomPredictionArray.length
+  );
+  const randomPredictionValue = randomPredictionArray[randomPredictionIndex];
+  return randomPredictionValue;
+};
