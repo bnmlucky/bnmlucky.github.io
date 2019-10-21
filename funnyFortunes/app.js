@@ -6,20 +6,20 @@ $(() => {
     const endpoint = `https://api.giphy.com/v1/gifs/search?api_key=OBitdmb0SaKAnBE6xlHlIFrUHJW6YfFU&q=${newGif}&limit=9&offset=0&rating=PG&lang=en`;
     console.log(endpoint);
 
-    const askUser = $("<p>")
-      .text(
-        "Where are you at in life right now?  Pick a giphy that feels right."
-      )
-      .addClass("giphychoice");
-    $(".container").append(askUser);
-
     const handleData = data => {
+      const $targetDiv = $(".giphyDiv").empty();
+      const askUser = $("<p>")
+        .text(
+          "Where are you at in life right now?  Pick a giphy that feels right."
+        )
+        .addClass("giphychoice");
+      $(".giphyDiv").append(askUser);
       for (let i = 0; i < 9; i++) {
         const image = $("<img>")
           .attr("src", data.data[i].images.downsized.url)
           .addClass("square")
           .addClass(assignRandomClass());
-        $(".container").append(image);
+        $targetDiv.append(image);
         givePrediction(image);
       }
     };
@@ -166,7 +166,7 @@ $(() => {
         const $thisPrediction = $("<p>");
         $thisPrediction
           .text(
-            "There is logic in seemingly random events that happen in your life.  Trust the proces and it'll take you where you want to be."
+            "There is logic in seemingly random events that happen in your life.  Trust the process and it'll take you where you want to be."
           )
           .addClass("prediction-text");
         $thisPrediction.appendTo($predictionDiv);
@@ -195,6 +195,12 @@ $(() => {
       }
     });
   };
+  const $reloadPage = () => {
+    $(".prediction").on("click", event => {
+      location.reload(true);
+    });
+  };
+  $reloadPage();
 });
 //$(".container").html("");
 
