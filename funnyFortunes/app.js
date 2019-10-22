@@ -17,8 +17,7 @@ $(() => {
       for (let i = 0; i < 9; i++) {
         const image = $("<img>")
           .attr("src", data.data[i].images.downsized.url)
-          .addClass("square")
-          .addClass(assignRandomClass());
+          .addClass("square");
         $targetDiv.append(image);
         givePrediction(image);
       }
@@ -30,147 +29,9 @@ $(() => {
 
   const givePrediction = clickedImg => {
     clickedImg.on("click", event => {
-      if ($(clickedImg).hasClass("good")) {
-        showPrediction();
-      } else if ($(clickedImg).hasClass("awesome")) {
-        $(".container")
-          .hide("slow")
-          .delay(1000);
-        const $predictionDiv = $(".prediction");
-        const $predictionTitle = $("<h1>").text(
-          "Here's what you need to know:"
-        );
-        $predictionTitle.appendTo($predictionDiv);
-        const $thisPrediction = $("<p>");
-        $thisPrediction
-          .text(assignRandomPrediction())
-          .addClass("prediction-text");
-        $thisPrediction.appendTo($predictionDiv);
-        $predictionDiv.show().delay(7000);
-        //
-      } else if ($(clickedImg).hasClass("OK")) {
-        $(".container")
-          .hide("slow")
-          .delay(1000);
-        const $predictionDiv = $(".prediction");
-        const $predictionTitle = $("<h1>").text(
-          "Here's what you need to know:"
-        );
-        $predictionTitle.appendTo($predictionDiv);
-        const $thisPrediction = $("<p>");
-        $thisPrediction
-          .text(assignRandomPrediction())
-          .addClass("prediction-text");
-        $thisPrediction.appendTo($predictionDiv);
-        $predictionDiv.show().delay(7000);
-        //
-      } else if ($(clickedImg).hasClass("alright")) {
-        $(".container")
-          .hide("slow")
-          .delay(1000);
-        const $predictionDiv = $(".prediction");
-        const $predictionTitle = $("<h1>").text(
-          "Here's what you need to know:"
-        );
-        $predictionTitle.appendTo($predictionDiv);
-        const $thisPrediction = $("<p>");
-        $thisPrediction
-          .text(assignRandomPrediction())
-          .addClass("prediction-text");
-        $thisPrediction.appendTo($predictionDiv);
-        $predictionDiv.show().delay(7000);
-        //
-      } else if ($(clickedImg).hasClass("wow")) {
-        $(".container")
-          .hide("slow")
-          .delay(1000);
-        const $predictionDiv = $(".prediction");
-        const $predictionTitle = $("<h1>").text(
-          "Here's what you need to know:"
-        );
-        $predictionTitle.appendTo($predictionDiv);
-        const $thisPrediction = $("<p>");
-        $thisPrediction
-          .text(assignRandomPrediction())
-          .addClass("prediction-text");
-        $thisPrediction.appendTo($predictionDiv);
-        $predictionDiv.show().delay(7000);
-        //
-      } else if ($(clickedImg).hasClass("whatever")) {
-        $(".container")
-          .hide("slow")
-          .delay(1000);
-        const $predictionDiv = $(".prediction");
-        const $predictionTitle = $("<h1>").text(
-          "Here's what you need to know:"
-        );
-        $predictionTitle.appendTo($predictionDiv);
-        const $thisPrediction = $("<p>");
-        $thisPrediction
-          .text(assignRandomPrediction())
-          .addClass("prediction-text");
-        $thisPrediction.appendTo($predictionDiv);
-        $predictionDiv.show().delay(7000);
-        //
-      } else if ($(clickedImg).hasClass("cool")) {
-        $(".container")
-          .hide("slow")
-          .delay(1000);
-        const $predictionDiv = $(".prediction");
-        const $predictionTitle = $("<h1>").text(
-          "Here's what you need to know:"
-        );
-        $predictionTitle.appendTo($predictionDiv);
-        const $thisPrediction = $("<p>");
-        $thisPrediction
-          .text(assignRandomPrediction())
-          .addClass("prediction-text");
-        $thisPrediction.appendTo($predictionDiv);
-        $predictionDiv.show().delay(7000);
-        //
-      } else if ($(clickedImg).hasClass("great")) {
-        $(".container")
-          .hide("slow")
-          .delay(1000);
-        const $predictionDiv = $(".prediction");
-        const $predictionTitle = $("<h1>").text(
-          "Here's what you need to know:"
-        );
-        $predictionTitle.appendTo($predictionDiv);
-        const $thisPrediction = $("<p>");
-        $thisPrediction
-          .text(assignRandomPrediction())
-          .addClass("prediction-text");
-        $thisPrediction.appendTo($predictionDiv);
-        $predictionDiv.show().delay(7000);
-        //
-      } else if ($(clickedImg).hasClass("super")) {
-        $(".container")
-          .hide("slow")
-          .delay(1000);
-        const $predictionDiv = $(".prediction");
-        const $predictionTitle = $("<h1>").text(
-          "Here's what you need to know:"
-        );
-        $predictionTitle.appendTo($predictionDiv);
-        const $thisPrediction = $("<p>");
-        $thisPrediction
-          .text(assignRandomPrediction())
-          .addClass("prediction-text");
-        $thisPrediction.appendTo($predictionDiv);
-        $predictionDiv.show().delay(7000);
-        //
-      } else {
-        console.log("something");
-      }
+      showPrediction();
     });
   };
-  const $reloadPage = () => {
-    $(".prediction").on("click", event => {
-      location.reload(true);
-    });
-  };
-  $reloadPage();
 
   const showPrediction = () => {
     $(".container")
@@ -184,8 +45,15 @@ $(() => {
     $thisPrediction.appendTo($predictionDiv);
     $predictionDiv.show().delay(7000);
   };
+
+  const $reloadPage = () => {
+    $(".prediction").on("click", event => {
+      location.reload(true);
+    });
+  };
+
+  $reloadPage();
 });
-//$(".container").html("");
 
 const randomClassArray = [
   "good",
@@ -215,7 +83,20 @@ const randomPredictionArray = [
   "You'll survive whatever you are going through, write a survival guide and get on New York Times Bestseller list with it",
   "There is logic in seemingly random events that happen in your life.  Trust the process and it'll take you where you want to be.",
   "There is no easy path to where you want to be, but you'll make a lot of friends along the way.",
-  "Buy this lottery ticket and see what happens."
+  "Buy this lottery ticket and see what happens.",
+  "Don't be afraid to take that big step forward.  Luck is on your side.",
+  "A new romance will appear in your life when you least expect it.",
+  "You will move to a wonderful new home within a year.",
+  "All that you've been working towards will manifest itself in most glorious ways.",
+  "Perhaps you've been focusing too much on spending.  There are many joys in life that don't require cash.",
+  "Perhaps you've been focusing too much on saving.  Get yourself a little something and celebrate your victories!",
+  "It seems you've been feeling a bit stuck in your life right now.  Help is on its way, but not in the shape and form you expect.",
+  "It's not that you need to slow down.  In fact, your life is about to pick up the pace and get really exciting.",
+  "I see money in your future.  But do you have a plan for that million dollars you are about to get?",
+  "Your efforts to make this world a better place haven't gone unnoticed. Karma is keeping track of everything.",
+  "Calculate your risks, but take that big step forward.",
+  "The smart thing is to prepare for the unexpected.  Life is about to have a major plot twist.",
+  "You will soon discover your hidden talent.  Yes, you can monetize it, too."
 ];
 
 const assignRandomPrediction = () => {

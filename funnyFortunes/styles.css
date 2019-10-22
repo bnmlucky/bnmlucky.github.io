@@ -81,6 +81,7 @@ img:hover {
   margin-right: 10%;
   border: 2px solid #dbba9a;
   display: none;
+  cursor: pointer;
 }
 
 .prediction-text {
@@ -94,4 +95,21 @@ img:hover {
 
 .giphyDiv {
   margin: 1%;
+  margin-bottom: 100px;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #a37b59;
+  color: #422f21;
+  border-top: 1px solid #333334;
+  text-align: center;
+}
+
+footer a {
+  text-decoration: none;
+  color: #dadfbc;
+  font-weight: bolder;
 }
