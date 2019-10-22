@@ -95,7 +95,7 @@ img:hover {
 
 .giphyDiv {
   margin: 1%;
-  margin-bottom: 100px;
+  margin-bottom: 120px;
 }
 
 footer {
@@ -112,4 +112,50 @@ footer a {
   text-decoration: none;
   color: #dadfbc;
   font-weight: bolder;
+}
+
+@media (max-width: 650px) {
+  h2 {
+    margin-top: 150px;
+  }
+  .giphyDiv {
+    box-sizing: border-box;
+    display: flex;
+    width: 100%;
+  }
+  .giphychoice {
+    margin: 0;
+    padding: 0;
+    font-size: 1.5em;
+  }
+  .square {
+    display: block;
+    overflow: hidden;
+    width: 50%;
+  }
+}
+
+@media (max-width: 900px) {
+  .giphyDiv {
+    box-sizing: border-box;
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding-right: 20px;
+  }
+
+  .giphychoice {
+    margin: 0;
+    padding: 0;
+    font-size: 2em;
+  }
+
+  .square {
+    display: block;
+    overflow: hidden;
+    /* width: 45%; */
+    flex-basis: 40%;
+    /* flex: 1; */
+  }
 }
