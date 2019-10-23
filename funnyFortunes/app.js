@@ -96,7 +96,10 @@ const randomPredictionArray = [
   "Your efforts to make this world a better place haven't gone unnoticed. Karma is keeping track of everything.",
   "Calculate your risks, but take that big step forward.",
   "The smart thing is to prepare for the unexpected.  Life is about to have a major plot twist.",
-  "You will soon discover your hidden talent.  Yes, you can monetize it, too."
+  "You will soon discover your hidden talent.  Yes, you can monetize it, too.",
+  "You are about to unlock a major achievement in your life and see all your hard work paying off! Stay at it.",
+  "It might have seemed that you can't control anything in your life currently, but there is your attitide and your effort that you can control. And they will turn it all around.",
+  "Before I say anything else - just let that special person know how you feel.  And all the rest is already falling into place."
 ];
 
 const assignRandomPrediction = () => {
