@@ -15,12 +15,20 @@
     </nav>
     <div>
         <% for (let i=0; i < todos.length; i++) { %>
-        <h3><%=todos[i].title%></h3>
+        <h3><a href="/todos/<%=todos[i].id %>"><%=todos[i].title%></a></h3>
         <p><%=todos[i].body%></p>
         <img src="<%= todos[i].img %>" /> <br />
         <% if (todos[i].completed === true) { %> DONE! <br />
         <% } else {%>
         NOT DONE <% } %>
+        <div>
+            <form action="/todos/<%=todos[i].id;%>?_method=DELETE" method="POST">
+                <input type="submit" value="DELETE" />
+            </form>
+        </div>
+        <div>
+            <a href="todos/<%= todos[i].id; %>/edit"><input type="submit" value="EDIT" /></a>
+        </div>
         <% } %>
     </div>
 </body>

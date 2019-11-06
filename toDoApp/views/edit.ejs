@@ -10,7 +10,15 @@
 
 <body>
     <h1>ToDo Edit Page</h1>
-    <h2></h2>
+    <div>
+        <form action="/todos/<%=todos.id %>?_method=PUT" method="POST">
+            Title: <input type="text" name="title" value="<%=todos.title %>" /> <br />
+            ToDo: <input type="text" name="body" value="<%= todos.body %>" /> <br />
+            Link/Image: <input type="url" name="img" value="<%= todos.img %>" /> <br />
+            Completed: <input type="checkbox" name="completed" <% if(todos.completed === true) {%> checked <%}%> /> <br />
+            <input type="submit" name="" value="SAVE" />
+        </form>
+    </div>
 </body>
 
 </html>

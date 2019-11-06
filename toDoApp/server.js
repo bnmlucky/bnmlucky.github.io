@@ -12,6 +12,9 @@ mongoose.connect(`mongodb://localhost:27017/${dbName}`, { useNewUrlParser: true 
 mongoose.connection.once("open", () => {
     console.log("connected to mongo")
 })
+mongoose.set("useFindAndModify", false);
+mongoose.set("useCreateIndex", true);
+mongoose.set("useUnifiedTopology", true);
 
 // Middleware
 app.use(express.urlencoded({ extended: true }));

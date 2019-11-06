@@ -10,6 +10,17 @@
 
 <body>
     <h1>ToDo Show Page</h1>
+    <div>
+        <h3><%= todos.title %></h3>
+        <p><%= todos.body %></p>
+        <img src="<%= todos.img %>" />
+        <p><% if (todos.completed === true) { %> DONE! <br />
+            <% } else {%>
+            NOT DONE <% } %></p>
+    </div>
+    <div>
+        <a href="/todos">Back to ToDos Index</a>
+    </div>
 </body>
 
 </html>
