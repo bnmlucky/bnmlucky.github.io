@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ToDo Index Page</title>
+</head>
+
+<body>
+    <h1>ToDo Index Page</h1>
+    <nav>
+        <a href="/todos/new">Create a New ToDo</a>
+    </nav>
+    <div>
+        <% for (let i=0; i < todos.length; i++) { %>
+        <h3><%=todos[i].title%></h3>
+        <p><%=todos[i].body%></p>
+        <img src="<%= todos[i].img %>" /> <br />
+        <% if (todos[i].completed === true) { %> DONE! <br />
+        <% } else {%>
+        NOT DONE <% } %>
+        <% } %>
+    </div>
+</body>
+
+</html>
