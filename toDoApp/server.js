@@ -17,9 +17,11 @@ mongoose.set("useCreateIndex", true);
 mongoose.set("useUnifiedTopology", true);
 
 // Middleware
+app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
 app.use("/todos", todosController);
+
 
 // Listener
 app.listen(port, (req, res) => {

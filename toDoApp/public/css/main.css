@@ -1,0 +1,16 @@
+body {
+    background-color: tomato;
+}
+
+header {
+    background-color: pink;
+    text-align: center;
+}
+nav {
+    background-color: bisque;
+    text-align: center;
+}
+footer {
+    background-color: cornflowerblue;
+    text-align: center;
+}
