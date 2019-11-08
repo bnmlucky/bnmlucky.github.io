@@ -13,14 +13,17 @@
 </head>
 
 <body>
-    <header>
-        <% include ./partials/header.ejs%>
-    </header>
-    <nav>
-        <% include ./partials/nav.ejs%>
-    </nav>
-    <h1>ToDo Edit Page</h1>
-    <div>
+    <div class="page-top">
+        <header>
+            <% include ./partials/header.ejs%>
+        </header>
+        <nav class="nav nav-pills nav-justified">
+            <% include ./partials/nav.ejs%>
+        </nav>
+    </div>
+
+    <div class="main">
+        <h1>ToDo Edit Page</h1>
         <form action="/todos/<%=todos.id %>?_method=PUT" method="POST">
             Title: <input type="text" name="title" value="<%=todos.title %>" /> <br />
             ToDo: <input type="text" name="body" value="<%= todos.body %>" /> <br />
@@ -29,7 +32,7 @@
             <input type="submit" name="" value="SAVE" />
         </form>
     </div>
-    <footer>
+    <footer class="navbar fixed-bottom navbar-light">
             <% include ./partials/footer.ejs%> </footer> <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
                 integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
                 crossorigin="anonymous"></script>

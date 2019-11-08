@@ -13,26 +13,30 @@
 </head>
 
 <body>
-    <header>
-        <% include ./partials/header.ejs%>
-    </header>
-    <nav>
-        <% include ./partials/nav.ejs%>
-    </nav>
-    <h1>ToDo App New Page</h1>
-    <div>
-        <h2>Add a New ToDo before you forget</h2>
+    <div class="page-top">
+        <header>
+            <% include ./partials/header.ejs%>
+        </header>
+        <nav class="nav nav-pills nav-justified">
+            <% include ./partials/nav.ejs%>
+        </nav>
+    </div>
+    <div class="main">
+        <h1>ToDo App New Page</h1>
         <div>
-            <form action="/todos" method="POST">
-                Title: <input type="text" name="title" /> <br />
-                ToDo: <input type="text" name="body" /> <br />
-                Image: <input type="url" name="img" /> <br />
-                Completed: <input type="checkbox" name="completed" /> <br />
-                <input type="submit" value="Add A ToDo" /> <br />
-            </form>
+            <h2>Add a New ToDo before you forget</h2>
+            <div>
+                <form action="/todos" method="POST">
+                    Title: <input type="text" name="title" /> <br />
+                    ToDo: <input type="text" name="body" /> <br />
+                    Image: <input type="url" name="img" /> <br />
+                    Completed: <input type="checkbox" name="completed" /> <br />
+                    <input type="submit" value="Add A ToDo" /> <br />
+                </form>
+            </div>
         </div>
     </div>
-    <footer>
+    <footer class="navbar fixed-bottom navbar-light">
         <% include ./partials/footer.ejs%>
     </footer>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

@@ -13,14 +13,16 @@
 </head>
 
 <body>
-    <header>
-        <% include ./partials/header.ejs%>
-    </header>
-    <nav>
-        <% include ./partials/nav.ejs%>
-    </nav>
-    <h1>ToDo Show Page</h1>
-    <div>
+    <div class="page-top">
+        <header>
+            <% include ./partials/header.ejs%>
+        </header>
+        <nav class="nav nav-pills nav-justified">
+            <% include ./partials/nav.ejs%>
+        </nav>
+    </div>
+    <div class="main">
+        <h1>ToDo Show Page</h1>
         <h3><%= todos.title %></h3>
         <p><%= todos.body %></p>
         <img src="<%= todos.img %>" />
@@ -31,7 +33,7 @@
     <div>
         <a href="/todos">Back to ToDos Index</a>
     </div>
-    <footer>
+    <footer class="navbar fixed-bottom navbar-light">
         <% include ./partials/footer.ejs%>
     </footer>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

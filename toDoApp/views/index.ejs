@@ -13,13 +13,15 @@
 </head>
 
 <body>
-    <header>
-        <% include ./partials/header.ejs%>
-    </header>
-    <nav>
-        <% include ./partials/nav.ejs%>
-    </nav>
-    <div>
+    <div class="page-top">
+        <header>
+            <% include ./partials/header.ejs%>
+        </header>
+        <nav class="nav nav-pills nav-justified">
+            <% include ./partials/nav.ejs%>
+        </nav>
+    </div>
+    <div class="main">
         <% for (let i=0; i < todos.length; i++) { %>
         <h3><a href="/todos/<%=todos[i].id %>"><%=todos[i].title%></a></h3>
         <p><%=todos[i].body%></p>
@@ -37,7 +39,7 @@
         </div>
         <% } %>
     </div>
-    <footer>
+    <footer class="navbar fixed-bottom navbar-light">
         <% include ./partials/footer.ejs%>
     </footer>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
