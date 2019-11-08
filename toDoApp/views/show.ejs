@@ -22,13 +22,15 @@
         </nav>
     </div>
     <div class="main">
-        <h1>ToDo Show Page</h1>
-        <h3><%= todos.title %></h3>
-        <p><%= todos.body %></p>
-        <img src="<%= todos.img %>" />
-        <p><% if (todos.completed === true) { %> DONE! <br />
-            <% } else {%>
-            NOT DONE <% } %></p>
+        <h1>Current ToDo</h1>
+        <div class="tile">
+            <h3><a href="/todos"><%= todos.title %></a></h3>
+            <p><%= todos.body %></p>
+            <img class="img-thumbnail rounded mx-auto d-block" src="<%= todos.img %>" />
+            <p><% if (todos.completed === true) { %> DONE! <br />
+                <% } else {%>
+                NOT DONE <% } %></p>
+        </div>
     </div>
     <div>
         <a href="/todos">Back to ToDos Index</a>

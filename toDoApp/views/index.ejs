@@ -22,24 +22,31 @@
         </nav>
     </div>
     <div class="main">
+
         <% for (let i=0; i < todos.length; i++) { %>
-        <h3><a href="/todos/<%=todos[i].id %>"><%=todos[i].title%></a></h3>
-        <p><%=todos[i].body%></p>
-        <img src="<%= todos[i].img %>" /> <br />
-        <% if (todos[i].completed === true) { %> DONE! <br />
-        <% } else {%>
-        NOT DONE <% } %>
-        <div>
-            <form action="/todos/<%=todos[i].id;%>?_method=DELETE" method="POST">
-                <input type="submit" value="DELETE" />
-            </form>
-        </div>
-        <div>
-            <a href="todos/<%= todos[i].id; %>/edit"><input type="submit" value="EDIT" /></a>
+        <div class="tile">
+            <h3><a href="/todos/<%=todos[i].id %>"><%=todos[i].title%></a></h3>
+            <p><%=todos[i].body%></p>
+            <img src="<%= todos[i].img %>" class="img-thumbnail rounded mx-auto d-block" /> <br />
+            <% if (todos[i].completed === true) { %>
+            <p>DONE! </p>
+            <% } else {%>
+            <p>NOT DONE </p>
+            <% } %>
+            <div class="container">
+                <form class="item" action="/todos/<%=todos[i].id;%>?_method=DELETE" method="POST">
+                    <input type="submit" class="btn btn-outline-secondary btn-md" value="DELETE" />
+                </form>
+                <a class="item" href="todos/<%= todos[i].id; %>/edit"><input type="submit"
+                        class="btn btn-outline-secondary btn-md" value="EDIT" /></a>
+            </div>
         </div>
         <% } %>
+        </br>
+
+
     </div>
-    <footer class="navbar fixed-bottom navbar-light">
+    <footer class="navbar fixed-bottom">
         <% include ./partials/footer.ejs%>
     </footer>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
