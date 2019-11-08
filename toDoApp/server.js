@@ -8,9 +8,9 @@ const port = process.env.PORT || 3000;
 
 // DB Setup
 const dbName = "todos"
-// const MONGODB_URI =
-//     process.env.MONGODB_URI || `mongodb://localhost:27017/${dbName}`;
-mongoose.connect(`mongodb://localhost:27017/${dbName}`, { useNewUrlParser: true })
+const MONGODB_URI =
+    process.env.MONGODB_URI || `mongodb://localhost:27017/${dbName}`;
+mongoose.connect(MONGODB_URI, { useNewUrlParser: true })
 mongoose.connection.once("open", () => {
     console.log("connected to mongo")
 })
